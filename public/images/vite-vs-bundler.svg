@@ -1,0 +1,86 @@
+<svg width="680" height="240" viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Instrument Sans', system-ui, sans-serif">
+  <rect width="680" height="240" fill="#131420"/>
+
+  <line x1="340" y1="0" x2="340" y2="240" stroke="#1d242f" stroke-width="1"/>
+
+  <!-- Bundle-based (left) -->
+  <text x="170" y="22" font-size="12" font-weight="600" fill="#a0aec0" text-anchor="middle">Bundle-based (Webpack, Parcel)</text>
+  <text x="170" y="38" font-size="10" fill="#4a5568" text-anchor="middle">full bundle before serving</text>
+
+  <!-- Flow: modules → bundle → server -->
+  <rect x="14" y="50" width="60" height="18" rx="3" fill="#1f2035" stroke="#1d242f"/>
+  <text x="44" y="63" font-size="9" fill="#4a5568" text-anchor="middle">mod.js</text>
+  <rect x="14" y="74" width="60" height="18" rx="3" fill="#1f2035" stroke="#1d242f"/>
+  <text x="44" y="87" font-size="9" fill="#4a5568" text-anchor="middle">utils.js</text>
+  <rect x="14" y="98" width="60" height="18" rx="3" fill="#1f2035" stroke="#1d242f"/>
+  <text x="44" y="111" font-size="9" fill="#4a5568" text-anchor="middle">react</text>
+  <rect x="14" y="122" width="60" height="18" rx="3" fill="#1f2035" stroke="#1d242f"/>
+  <text x="44" y="135" font-size="9" fill="#4a5568" text-anchor="middle">…N mods</text>
+
+  <defs>
+    <marker id="vb1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="none" stroke="#4a5568" stroke-width="1.2"/>
+    </marker>
+    <marker id="vb2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="none" stroke="#ff3c00" stroke-width="1.2"/>
+    </marker>
+  </defs>
+
+  <!-- All modules → bundler -->
+  <line x1="74" y1="66" x2="128" y2="95" stroke="#4a5568" stroke-width="1" marker-end="url(#vb1)"/>
+  <line x1="74" y1="83" x2="128" y2="97" stroke="#4a5568" stroke-width="1" marker-end="url(#vb1)"/>
+  <line x1="74" y1="107" x2="128" y2="101" stroke="#4a5568" stroke-width="1" marker-end="url(#vb1)"/>
+  <line x1="74" y1="131" x2="128" y2="105" stroke="#4a5568" stroke-width="1" marker-end="url(#vb1)"/>
+
+  <rect x="128" y="72" width="80" height="52" rx="5" fill="#1f2035" stroke="#1d242f"/>
+  <text x="168" y="95" font-size="10" fill="#a0aec0" text-anchor="middle">Bundler</text>
+  <text x="168" y="110" font-size="9" fill="#4a5568" text-anchor="middle">processes everything</text>
+
+  <line x1="208" y1="98" x2="238" y2="98" stroke="#4a5568" stroke-width="1.5" marker-end="url(#vb1)"/>
+
+  <rect x="238" y="72" width="90" height="52" rx="5" fill="#1f2035" stroke="#ff3c00" stroke-width="1"/>
+  <text x="283" y="95" font-size="10" fill="#ff3c00" text-anchor="middle">bundle.js</text>
+  <text x="283" y="110" font-size="9" fill="#a0aec0" text-anchor="middle">single file</text>
+
+  <!-- Dev server only after bundle -->
+  <text x="170" y="152" font-size="10" fill="#ff3c00" text-anchor="middle">⚠ cold start = full bundle</text>
+  <text x="170" y="168" font-size="10" fill="#4a5568" text-anchor="middle">HMR: re-bundles every changed module</text>
+
+  <!-- Time bar -->
+  <rect x="14" y="185" width="314" height="10" rx="3" fill="#ff3c00" fill-opacity="0.2" stroke="#ff3c00" stroke-width="0.5"/>
+  <text x="170" y="208" font-size="10" fill="#ff3c00" text-anchor="middle">slow startup — gets worse as app grows</text>
+
+  <!-- Native ESM / Vite (right) -->
+  <text x="510" y="22" font-size="12" font-weight="600" fill="#ff3c00" text-anchor="middle">Native ESM (Vite, WMR)</text>
+  <text x="510" y="38" font-size="10" fill="#4a5568" text-anchor="middle">dev server starts immediately, serves on-demand</text>
+
+  <!-- Dev server starts first -->
+  <rect x="356" y="56" width="120" height="42" rx="5" fill="#1f2035" stroke="#ff3c00" stroke-width="1.5"/>
+  <text x="416" y="74" font-size="11" font-weight="600" fill="#ff3c00" text-anchor="middle">Dev Server</text>
+  <text x="416" y="90" font-size="9" fill="#a0aec0" text-anchor="middle">starts in &lt; 300ms</text>
+
+  <!-- Browser requests module -->
+  <line x1="476" y1="77" x2="520" y2="77" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#vb1)"/>
+  <text x="498" y="70" font-size="9" fill="#a0aec0" text-anchor="middle">import req</text>
+
+  <!-- Server transforms on demand -->
+  <rect x="520" y="56" width="150" height="42" rx="5" fill="#1f2035" stroke="#1d242f"/>
+  <text x="595" y="74" font-size="11" fill="#f7fafc" text-anchor="middle">transforma</text>
+  <text x="595" y="90" font-size="9" fill="#a0aec0" text-anchor="middle">only the requested module</text>
+
+  <!-- Back arrow -->
+  <line x1="520" y1="83" x2="476" y2="83" stroke="#ff3c00" stroke-width="1.5" marker-end="url(#vb2)"/>
+  <text x="498" y="94" font-size="9" fill="#ff3c00" text-anchor="middle">ESM response</text>
+
+  <!-- Module tree below -->
+  <text x="595" y="122" font-size="9" fill="#4a5568" text-anchor="middle">esbuild pre-bundles deps</text>
+  <text x="595" y="136" font-size="9" fill="#4a5568" text-anchor="middle">(node_modules) once</text>
+  <text x="416" y="122" font-size="9" fill="#4a5568" text-anchor="middle">HMR: only changed module</text>
+
+  <!-- Time bar -->
+  <rect x="356" y="185" width="314" height="10" rx="3" fill="#a0aec0" fill-opacity="0.15" stroke="#a0aec0" stroke-width="0.5"/>
+  <rect x="356" y="185" width="60" height="10" rx="3" fill="#ff3c00" fill-opacity="0.3"/>
+  <text x="510" y="208" font-size="10" fill="#a0aec0" text-anchor="middle">constant startup — independent of app size</text>
+
+  <text x="340" y="228" font-size="10" fill="#4a5568" text-anchor="middle">in production, Vite still bundles (Rollup) — native ESM is dev server only</text>
+</svg>

@@ -1,0 +1,78 @@
+<svg width="680" height="240" viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Instrument Sans', system-ui, sans-serif">
+  <rect width="680" height="240" fill="#131420"/>
+
+  <!-- Divider -->
+  <line x1="340" y1="0" x2="340" y2="240" stroke="#1d242f" stroke-width="1"/>
+
+  <!-- HTTP/1.1 side -->
+  <text x="170" y="22" font-size="12" font-weight="600" fill="#a0aec0" text-anchor="middle" letter-spacing="0.04em">HTTP/1.1</text>
+  <text x="170" y="38" font-size="10" fill="#4a5568" text-anchor="middle">multiple TCP connections · head-of-line blocking</text>
+
+  <!-- 3 separate connections -->
+  <!-- Connection 1 -->
+  <text x="40" y="58" font-size="9" fill="#4a5568">Connection 1</text>
+  <rect x="20" y="64" width="220" height="22" rx="3" fill="#1f2035" stroke="#1d242f"/>
+  <rect x="20" y="64" width="73" height="22" rx="3" fill="#1d242f"/>
+  <text x="56" y="79" font-size="10" fill="#ff3c00" text-anchor="middle">req 1</text>
+  <rect x="94" y="64" width="73" height="22" rx="0" fill="#1a1b2e" stroke="#1d242f" stroke-width="0"/>
+  <text x="130" y="79" font-size="10" fill="#4a5568" text-anchor="middle">waiting...</text>
+  <rect x="168" y="64" width="73" height="22" rx="3" fill="#1d242f"/>
+  <text x="204" y="79" font-size="10" fill="#a0aec0" text-anchor="middle">resp 1</text>
+
+  <!-- Connection 2 -->
+  <text x="40" y="100" font-size="9" fill="#4a5568">Connection 2</text>
+  <rect x="20" y="106" width="220" height="22" rx="3" fill="#1f2035" stroke="#1d242f"/>
+  <rect x="94" y="106" width="73" height="22" rx="3" fill="#1d242f"/>
+  <text x="130" y="121" font-size="10" fill="#ff3c00" text-anchor="middle">req 2</text>
+  <rect x="168" y="106" width="73" height="22" rx="3" fill="#1d242f"/>
+  <text x="204" y="121" font-size="10" fill="#a0aec0" text-anchor="middle">resp 2</text>
+
+  <!-- Connection 3 -->
+  <text x="40" y="142" font-size="9" fill="#4a5568">Connection 3</text>
+  <rect x="20" y="148" width="220" height="22" rx="3" fill="#1f2035" stroke="#1d242f"/>
+  <rect x="168" y="148" width="73" height="22" rx="3" fill="#1d242f"/>
+  <text x="204" y="163" font-size="10" fill="#ff3c00" text-anchor="middle">req 3</text>
+
+  <!-- Time axis -->
+  <line x1="20" y1="188" x2="240" y2="188" stroke="#1d242f" stroke-width="1"/>
+  <text x="20" y="200" font-size="9" fill="#4a5568">t=0</text>
+  <text x="240" y="200" font-size="9" fill="#4a5568" text-anchor="end">→ time</text>
+  <text x="130" y="218" font-size="10" fill="#4a5568" text-anchor="middle">overhead: 3 × TCP handshake</text>
+
+  <!-- HTTP/2 side -->
+  <text x="510" y="22" font-size="12" font-weight="600" fill="#ff3c00" text-anchor="middle" letter-spacing="0.04em">HTTP/2</text>
+  <text x="510" y="38" font-size="10" fill="#4a5568" text-anchor="middle">one TCP connection · multiplexing · independent streams</text>
+
+  <!-- Single connection with 3 interleaved streams -->
+  <text x="360" y="58" font-size="9" fill="#4a5568">Single connection</text>
+  <rect x="360" y="64" width="300" height="22" rx="3" fill="#1f2035" stroke="#ff3c00" stroke-width="1.5"/>
+  <!-- Stream 1 -->
+  <rect x="360" y="64" width="50" height="22" rx="3" fill="#ff3c00" fill-opacity="0.2" stroke="#ff3c00" stroke-width="0.5"/>
+  <text x="385" y="79" font-size="9" fill="#ff3c00" text-anchor="middle">S1</text>
+  <rect x="412" y="64" width="50" height="22" rx="0" fill="#ff3c00" fill-opacity="0.2"/>
+  <text x="437" y="79" font-size="9" fill="#ff3c00" text-anchor="middle">S1</text>
+  <rect x="610" y="64" width="50" height="22" rx="3" fill="#ff3c00" fill-opacity="0.2"/>
+  <text x="635" y="79" font-size="9" fill="#ff3c00" text-anchor="middle">S1</text>
+
+  <rect x="360" y="95" width="300" height="22" rx="3" fill="#1f2035" stroke="#ff3c00" stroke-width="1.5"/>
+  <!-- Stream 2 -->
+  <rect x="362" y="95" width="30" height="22" rx="2" fill="#a0aec0" fill-opacity="0.2"/>
+  <text x="377" y="110" font-size="9" fill="#a0aec0" text-anchor="middle">S2</text>
+  <rect x="462" y="95" width="50" height="22" rx="0" fill="#a0aec0" fill-opacity="0.2"/>
+  <text x="487" y="110" font-size="9" fill="#a0aec0" text-anchor="middle">S2</text>
+  <rect x="560" y="95" width="40" height="22" rx="2" fill="#a0aec0" fill-opacity="0.2"/>
+  <text x="580" y="110" font-size="9" fill="#a0aec0" text-anchor="middle">S2</text>
+
+  <rect x="360" y="126" width="300" height="22" rx="3" fill="#1f2035" stroke="#ff3c00" stroke-width="1.5"/>
+  <!-- Stream 3 -->
+  <rect x="390" y="126" width="40" height="22" rx="2" fill="#4a5568" fill-opacity="0.4"/>
+  <text x="410" y="141" font-size="9" fill="#f7fafc" text-anchor="middle">S3</text>
+  <rect x="510" y="126" width="60" height="22" rx="2" fill="#4a5568" fill-opacity="0.4"/>
+  <text x="540" y="141" font-size="9" fill="#f7fafc" text-anchor="middle">S3</text>
+
+  <!-- Time axis -->
+  <line x1="360" y1="188" x2="660" y2="188" stroke="#1d242f" stroke-width="1"/>
+  <text x="360" y="200" font-size="9" fill="#4a5568">t=0</text>
+  <text x="660" y="200" font-size="9" fill="#4a5568" text-anchor="end">→ time</text>
+  <text x="510" y="218" font-size="10" fill="#a0aec0" text-anchor="middle">all streams in parallel, no blocking</text>
+</svg>

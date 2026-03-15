@@ -1,0 +1,59 @@
+<svg width="680" height="240" viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Instrument Sans', system-ui, sans-serif">
+  <rect width="680" height="240" fill="#131420"/>
+
+  <text x="340" y="20" font-size="11" fill="#4a5568" text-anchor="middle" letter-spacing="0.08em">WEBSOCKET — PERSISTENT BIDIRECTIONAL CONNECTION</text>
+
+  <!-- Client and Server labels -->
+  <text x="80" y="44" font-size="11" font-weight="600" fill="#f7fafc" text-anchor="middle">Client</text>
+  <text x="600" y="44" font-size="11" font-weight="600" fill="#f7fafc" text-anchor="middle">Server</text>
+
+  <!-- Vertical timeline lines -->
+  <line x1="80" y1="50" x2="80" y2="220" stroke="#1d242f" stroke-width="2"/>
+  <line x1="600" y1="50" x2="600" y2="220" stroke="#1d242f" stroke-width="2"/>
+
+  <!-- Step 1: HTTP Upgrade request -->
+  <defs>
+    <marker id="ws1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="none" stroke="#a0aec0" stroke-width="1.2"/>
+    </marker>
+    <marker id="ws2" markerWidth="6" markerHeight="6" refX="1" refY="3" orient="auto">
+      <path d="M6,0 L0,3 L6,6" fill="none" stroke="#ff3c00" stroke-width="1.2"/>
+    </marker>
+    <marker id="ws3" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="none" stroke="#ff3c00" stroke-width="1.2"/>
+    </marker>
+  </defs>
+
+  <!-- HTTP GET Upgrade -->
+  <line x1="80" y1="70" x2="600" y2="85" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#ws1)"/>
+  <text x="340" y="67" font-size="10" fill="#a0aec0" text-anchor="middle">GET /chat  ·  Upgrade: websocket  ·  Connection: Upgrade</text>
+
+  <!-- 101 Switching Protocols -->
+  <line x1="600" y1="105" x2="80" y2="120" stroke="#ff3c00" stroke-width="1.5" marker-end="url(#ws2)"/>
+  <text x="340" y="103" font-size="10" fill="#ff3c00" text-anchor="middle">101 Switching Protocols  — WebSocket connection established</text>
+
+  <!-- Separator line -->
+  <line x1="60" y1="135" x2="620" y2="135" stroke="#1d242f" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="340" y="132" font-size="9" fill="#4a5568" text-anchor="middle">HTTP closed — WebSocket protocol active</text>
+
+  <!-- Bidirectional messages -->
+  <!-- Client → Server -->
+  <line x1="80" y1="152" x2="600" y2="155" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#ws1)"/>
+  <text x="340" y="150" font-size="10" fill="#a0aec0" text-anchor="middle">frame: "hello" (client → server)</text>
+
+  <!-- Server → Client -->
+  <line x1="600" y1="172" x2="80" y2="175" stroke="#ff3c00" stroke-width="1.5" marker-end="url(#ws2)"/>
+  <text x="340" y="170" font-size="10" fill="#ff3c00" text-anchor="middle">frame: "world" (server → client)</text>
+
+  <!-- Server → Client (push, unsolicited) -->
+  <line x1="600" y1="192" x2="80" y2="195" stroke="#ff3c00" stroke-width="1.5" marker-end="url(#ws2)"/>
+  <text x="340" y="190" font-size="10" fill="#ff3c00" text-anchor="middle">frame: "new event" (server push — no request)</text>
+
+  <!-- Client → Server (more) -->
+  <line x1="80" y1="210" x2="600" y2="213" stroke="#a0aec0" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#ws1)"/>
+
+  <!-- Bottom caption -->
+  <text x="80" y="232" font-size="9" fill="#4a5568" text-anchor="middle">full-duplex</text>
+  <text x="600" y="232" font-size="9" fill="#4a5568" text-anchor="middle">full-duplex</text>
+  <text x="340" y="232" font-size="9" fill="#4a5568" text-anchor="middle">connection remains open — no request overhead per message</text>
+</svg>

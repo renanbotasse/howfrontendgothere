@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { seriesArticles } from '../../data/navigation.js';
+
+export async function getStaticPaths() {
+  const { seriesArticles } = await import('../../data/navigation.js');
+  return seriesArticles.map(article => ({
+    params: { slug: article.slug },
+    props: { article, seriesArticles },
+  }));
+}
+
+const { article, seriesArticles: articles } = Astro.props;
+
+const currentIndex = articles.findIndex(a => a.slug === article.slug);
+const prev = currentIndex > 0 ? articles[currentIndex - 1] : null;
+const next = currentIndex < articles.length - 1 ? articles[currentIndex + 1] : null;
+
+let Content;
+try {
+  const mod = await import(`../../content/series/${article.slug}.md`);
+  Content = mod.default;
+} catch (e) {
+  Content = null;
+}
+---
+
+<Layout title={article.title} currentPath={`/series/${article.slug}`}>
+
+  <div class="article-header">
+    <span class="article-tag">The Web Stack · #{article.num}</span>
+    <h1 class="article-title">{article.title}</h1>
+  </div>
+
+  <div class="prose">
+    {Content ? <Content /> : (
+      <p style="color: var(--text-muted); font-style: italic;">
+        Content coming soon — add the file <code>src/content/series/{article.slug}.md</code>
+      </p>
+    )}
+  </div>
+
+  {(prev || next) && (
+    <nav class="article-nav">
+      {prev ? (
+        <a href={`/series/${prev.slug}`} class="article-nav-item prev">
+          <div class="article-nav-dir">← Previous</div>
+          <div class="article-nav-title">{prev.title}</div>
+        </a>
+      ) : <div />}
+      {next ? (
+        <a href={`/series/${next.slug}`} class="article-nav-item next">
+          <div class="article-nav-dir">Next →</div>
+          <div class="article-nav-title">{next.title}</div>
+        </a>
+      ) : <div />}
+    </nav>
+  )}
+
+</Layout>

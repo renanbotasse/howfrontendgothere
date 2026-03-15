@@ -1,0 +1,58 @@
+<svg width="680" height="180" viewBox="0 0 680 180" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Instrument Sans', system-ui, sans-serif">
+  <rect width="680" height="180" fill="#131420"/>
+
+  <text x="340" y="20" font-size="11" fill="#4a5568" text-anchor="middle" letter-spacing="0.08em">TC39 — JAVASCRIPT EVOLUTION PROCESS</text>
+
+  <!-- Stage boxes -->
+  <!-- Stage 0 -->
+  <rect x="14" y="34" width="106" height="90" rx="5" fill="#1f2035" stroke="#1d242f"/>
+  <text x="67" y="55" font-size="10" fill="#4a5568" text-anchor="middle" letter-spacing="0.06em">STAGE 0</text>
+  <text x="67" y="74" font-size="12" font-weight="600" fill="#f7fafc" text-anchor="middle">Strawman</text>
+  <text x="67" y="92" font-size="9" fill="#a0aec0" text-anchor="middle">informal idea</text>
+  <text x="67" y="108" font-size="9" fill="#4a5568" text-anchor="middle">anyone</text>
+
+  <!-- Arrow -->
+  <defs>
+    <marker id="tc" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="none" stroke="#4a5568" stroke-width="1.2"/>
+    </marker>
+  </defs>
+  <line x1="120" y1="79" x2="134" y2="79" stroke="#4a5568" stroke-width="1.5" marker-end="url(#tc)"/>
+
+  <!-- Stage 1 -->
+  <rect x="134" y="34" width="106" height="90" rx="5" fill="#1f2035" stroke="#1d242f"/>
+  <text x="187" y="55" font-size="10" fill="#4a5568" text-anchor="middle" letter-spacing="0.06em">STAGE 1</text>
+  <text x="187" y="74" font-size="12" font-weight="600" fill="#f7fafc" text-anchor="middle">Proposal</text>
+  <text x="187" y="92" font-size="9" fill="#a0aec0" text-anchor="middle">champion + spec</text>
+  <text x="187" y="108" font-size="9" fill="#4a5568" text-anchor="middle">polyfills possible</text>
+
+  <line x1="240" y1="79" x2="254" y2="79" stroke="#4a5568" stroke-width="1.5" marker-end="url(#tc)"/>
+
+  <!-- Stage 2 -->
+  <rect x="254" y="34" width="106" height="90" rx="5" fill="#1f2035" stroke="#1d242f"/>
+  <text x="307" y="55" font-size="10" fill="#4a5568" text-anchor="middle" letter-spacing="0.06em">STAGE 2</text>
+  <text x="307" y="74" font-size="12" font-weight="600" fill="#f7fafc" text-anchor="middle">Draft</text>
+  <text x="307" y="92" font-size="9" fill="#a0aec0" text-anchor="middle">formal spec</text>
+  <text x="307" y="108" font-size="9" fill="#4a5568" text-anchor="middle">semantics defined</text>
+
+  <line x1="360" y1="79" x2="374" y2="79" stroke="#4a5568" stroke-width="1.5" marker-end="url(#tc)"/>
+
+  <!-- Stage 3 -->
+  <rect x="374" y="34" width="106" height="90" rx="5" fill="#1f2035" stroke="#1d242f"/>
+  <text x="427" y="55" font-size="10" fill="#4a5568" text-anchor="middle" letter-spacing="0.06em">STAGE 3</text>
+  <text x="427" y="74" font-size="12" font-weight="600" fill="#f7fafc" text-anchor="middle">Candidate</text>
+  <text x="427" y="92" font-size="9" fill="#a0aec0" text-anchor="middle">implementation</text>
+  <text x="427" y="108" font-size="9" fill="#4a5568" text-anchor="middle">browsers test</text>
+
+  <line x1="480" y1="79" x2="494" y2="79" stroke="#ff3c00" stroke-width="1.5" marker-end="url(#tc)"/>
+
+  <!-- Stage 4 -->
+  <rect x="494" y="34" width="172" height="90" rx="5" fill="#1f2035" stroke="#ff3c00" stroke-width="1.5"/>
+  <text x="580" y="55" font-size="10" fill="#ff3c00" text-anchor="middle" letter-spacing="0.06em">STAGE 4</text>
+  <text x="580" y="74" font-size="12" font-weight="600" fill="#ff3c00" text-anchor="middle">Finished</text>
+  <text x="580" y="92" font-size="9" fill="#a0aec0" text-anchor="middle">added to ECMAScript spec</text>
+  <text x="580" y="108" font-size="9" fill="#4a5568" text-anchor="middle">next ES release</text>
+
+  <text x="340" y="158" font-size="10" fill="#4a5568" text-anchor="middle">each stage requires TC39 committee approval (engine reps: V8, SpiderMonkey, JSC)</text>
+  <text x="340" y="172" font-size="10" fill="#4a5568" text-anchor="middle">optional Stage 2.7 (since 2023) — complete spec before entering Stage 3</text>
+</svg>

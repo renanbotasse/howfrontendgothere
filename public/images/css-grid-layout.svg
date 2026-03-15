@@ -1,0 +1,50 @@
+<svg width="680" height="240" viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Instrument Sans', system-ui, sans-serif">
+  <rect width="680" height="240" fill="#131420"/>
+
+  <text x="340" y="20" font-size="11" fill="#4a5568" text-anchor="middle" letter-spacing="0.08em">CSS GRID — GRID CONTAINER + TRACKS</text>
+
+  <!-- Grid container outline -->
+  <rect x="60" y="36" width="560" height="170" rx="6" fill="#1a1b2e" stroke="#ff3c00" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="90" y="52" font-size="10" fill="#ff3c00">.container  { display: grid; grid-template-columns: 1fr 2fr 1fr; }</text>
+
+  <!-- Column tracks: 3 columns -->
+  <!-- Col 1: 140px, Col 2: 280px, Col 3: 140px. Total=560. From x=60 -->
+  <!-- Grid lines -->
+  <line x1="200" y1="60" x2="200" y2="196" stroke="#1d242f" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="480" y1="60" x2="480" y2="196" stroke="#1d242f" stroke-width="1" stroke-dasharray="3,3"/>
+  <!-- Row lines -->
+  <line x1="60" y1="128" x2="620" y2="128" stroke="#1d242f" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Cells: Row 1 -->
+  <rect x="68" y="66" width="124" height="54" rx="4" fill="#1f2035" stroke="#1d242f"/>
+  <text x="130" y="91" font-size="11" fill="#a0aec0" text-anchor="middle">item 1</text>
+  <text x="130" y="107" font-size="9" fill="#4a5568" text-anchor="middle">col 1</text>
+
+  <rect x="208" y="66" width="264" height="54" rx="4" fill="#1f2035" stroke="#ff3c00" stroke-width="1"/>
+  <text x="340" y="91" font-size="11" fill="#ff3c00" text-anchor="middle">item 2</text>
+  <text x="340" y="107" font-size="9" fill="#a0aec0" text-anchor="middle">col 2 — 2fr (twice as wide)</text>
+
+  <rect x="488" y="66" width="124" height="54" rx="4" fill="#1f2035" stroke="#1d242f"/>
+  <text x="550" y="91" font-size="11" fill="#a0aec0" text-anchor="middle">item 3</text>
+  <text x="550" y="107" font-size="9" fill="#4a5568" text-anchor="middle">col 3</text>
+
+  <!-- Cells: Row 2 -->
+  <rect x="68" y="136" width="124" height="52" rx="4" fill="#1f2035" stroke="#1d242f"/>
+  <text x="130" y="166" font-size="11" fill="#a0aec0" text-anchor="middle">item 4</text>
+
+  <!-- item spanning cols 2-3 -->
+  <rect x="208" y="136" width="404" height="52" rx="4" fill="#1f2035" stroke="#1d242f" stroke-dasharray="4,2"/>
+  <text x="410" y="158" font-size="11" fill="#4a5568" text-anchor="middle">item 5 — grid-column: 2 / 4  (span 2)</text>
+
+  <!-- Column track labels (top) -->
+  <text x="130" y="215" font-size="9" fill="#4a5568" text-anchor="middle">1fr</text>
+  <text x="340" y="215" font-size="9" fill="#ff3c00" text-anchor="middle">2fr</text>
+  <text x="550" y="215" font-size="9" fill="#4a5568" text-anchor="middle">1fr</text>
+
+  <!-- Brace-like lines for column widths -->
+  <line x1="68" y1="208" x2="192" y2="208" stroke="#4a5568" stroke-width="1"/>
+  <line x1="208" y1="208" x2="472" y2="208" stroke="#ff3c00" stroke-width="1"/>
+  <line x1="488" y1="208" x2="612" y2="208" stroke="#4a5568" stroke-width="1"/>
+
+  <text x="340" y="232" font-size="10" fill="#4a5568" text-anchor="middle">fr unit = fraction of available space after subtracting gaps and fixed sizes</text>
+</svg>

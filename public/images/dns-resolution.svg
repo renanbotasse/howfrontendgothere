@@ -1,0 +1,62 @@
+<svg width="680" height="220" viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Instrument Sans', system-ui, sans-serif">
+  <rect width="680" height="220" fill="#131420"/>
+
+  <!-- Title -->
+  <text x="340" y="22" font-size="11" fill="#4a5568" text-anchor="middle" letter-spacing="0.08em">DNS RESOLUTION — cold lookup flow</text>
+
+  <!-- Nodes: Browser, Resolver, Root, TLD, Authoritative -->
+  <!-- Browser -->
+  <rect x="14" y="44" width="88" height="44" rx="5" fill="#1f2035" stroke="#ff3c00" stroke-width="1.5"/>
+  <text x="58" y="63" font-size="11" font-weight="600" fill="#ff3c00" text-anchor="middle">Browser</text>
+  <text x="58" y="79" font-size="10" fill="#a0aec0" text-anchor="middle">github.com</text>
+
+  <!-- Resolver -->
+  <rect x="142" y="44" width="88" height="44" rx="5" fill="#1f2035" stroke="#1d242f" stroke-width="1"/>
+  <text x="186" y="63" font-size="11" font-weight="600" fill="#f7fafc" text-anchor="middle">Resolver</text>
+  <text x="186" y="79" font-size="10" fill="#a0aec0" text-anchor="middle">1.1.1.1</text>
+
+  <!-- Root NS -->
+  <rect x="270" y="44" width="88" height="44" rx="5" fill="#1f2035" stroke="#1d242f" stroke-width="1"/>
+  <text x="314" y="63" font-size="11" font-weight="600" fill="#f7fafc" text-anchor="middle">Root NS</text>
+  <text x="314" y="79" font-size="10" fill="#a0aec0" text-anchor="middle">13 servers</text>
+
+  <!-- TLD NS -->
+  <rect x="398" y="44" width="88" height="44" rx="5" fill="#1f2035" stroke="#1d242f" stroke-width="1"/>
+  <text x="442" y="63" font-size="11" font-weight="600" fill="#f7fafc" text-anchor="middle">TLD NS</text>
+  <text x="442" y="79" font-size="10" fill="#a0aec0" text-anchor="middle">.com</text>
+
+  <!-- Authoritative NS -->
+  <rect x="526" y="44" width="140" height="44" rx="5" fill="#1f2035" stroke="#1d242f" stroke-width="1"/>
+  <text x="596" y="63" font-size="11" font-weight="600" fill="#f7fafc" text-anchor="middle">Authoritative NS</text>
+  <text x="596" y="79" font-size="10" fill="#a0aec0" text-anchor="middle">github.com</text>
+
+  <!-- Forward arrows (queries) — top path -->
+  <defs>
+    <marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="none" stroke="#4a5568" stroke-width="1"/>
+    </marker>
+    <marker id="arr-back" markerWidth="6" markerHeight="6" refX="1" refY="3" orient="auto">
+      <path d="M6,0 L0,3 L6,6" fill="none" stroke="#ff3c00" stroke-width="1"/>
+    </marker>
+  </defs>
+
+  <!-- Query arrows (forward) -->
+  <line x1="102" y1="60" x2="142" y2="60" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="230" y1="60" x2="270" y2="60" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="358" y1="60" x2="398" y2="60" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="486" y1="60" x2="526" y2="60" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Labels for forward arrows -->
+  <text x="122" y="55" font-size="9" fill="#4a5568" text-anchor="middle">1</text>
+  <text x="250" y="55" font-size="9" fill="#4a5568" text-anchor="middle">2</text>
+  <text x="378" y="55" font-size="9" fill="#4a5568" text-anchor="middle">3</text>
+  <text x="506" y="55" font-size="9" fill="#4a5568" text-anchor="middle">4</text>
+
+  <!-- Return path (bottom) — IP address flows back -->
+  <path d="M596,88 L596,140 L58,140 L58,88" fill="none" stroke="#ff3c00" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr-back)"/>
+  <text x="327" y="158" font-size="11" fill="#ff3c00" text-anchor="middle">IP: 140.82.121.4 (TTL cached)</text>
+
+  <!-- Step labels -->
+  <text x="340" y="185" font-size="10" fill="#4a5568" text-anchor="middle">browser cache → OS → resolver → root → TLD → authoritative</text>
+  <text x="340" y="202" font-size="10" fill="#4a5568" text-anchor="middle">cold cache: 20 – 120ms · warm cache: ~0ms</text>
+</svg>

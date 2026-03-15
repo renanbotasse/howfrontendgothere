@@ -1,0 +1,49 @@
+<svg width="680" height="260" viewBox="0 0 680 260" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Instrument Sans', system-ui, sans-serif">
+  <rect width="680" height="260" fill="#131420"/>
+
+  <text x="340" y="20" font-size="11" fill="#4a5568" text-anchor="middle" letter-spacing="0.08em">EVENT LOOP — JavaScript is single-threaded</text>
+
+  <!-- Call Stack -->
+  <text x="80" y="44" font-size="11" font-weight="600" fill="#ff3c00" text-anchor="middle" letter-spacing="0.05em">CALL STACK</text>
+  <rect x="30" y="52" width="100" height="34" rx="4" fill="#1f2035" stroke="#ff3c00" stroke-width="1"/>
+  <text x="80" y="74" font-size="11" fill="#ff3c00" text-anchor="middle">console.log()</text>
+  <rect x="30" y="87" width="100" height="34" rx="4" fill="#1f2035" stroke="#1d242f" stroke-width="1"/>
+  <text x="80" y="109" font-size="11" fill="#a0aec0" text-anchor="middle">fetchData()</text>
+  <rect x="30" y="122" width="100" height="34" rx="4" fill="#1f2035" stroke="#1d242f" stroke-width="1"/>
+  <text x="80" y="144" font-size="11" fill="#a0aec0" text-anchor="middle">main()</text>
+  <!-- Stack floor -->
+  <rect x="30" y="157" width="100" height="4" rx="2" fill="#1d242f"/>
+  <text x="80" y="173" font-size="10" fill="#4a5568" text-anchor="middle">synchronous execution</text>
+
+  <!-- Microtask Queue -->
+  <text x="340" y="44" font-size="11" font-weight="600" fill="#f7fafc" text-anchor="middle" letter-spacing="0.05em">MICROTASK QUEUE</text>
+  <rect x="240" y="52" width="200" height="34" rx="4" fill="#1f2035" stroke="#1d242f" stroke-width="1"/>
+  <text x="340" y="74" font-size="11" fill="#a0aec0" text-anchor="middle">Promise.resolve().then(…)</text>
+  <rect x="240" y="87" width="200" height="34" rx="4" fill="#1a1b2e" stroke="#1d242f" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="340" y="109" font-size="11" fill="#4a5568" text-anchor="middle">queueMicrotask(…)</text>
+  <text x="340" y="142" font-size="10" fill="#4a5568" text-anchor="middle">drains completely before next task</text>
+  <text x="340" y="157" font-size="10" fill="#4a5568" text-anchor="middle">priority: high</text>
+
+  <!-- Task Queue -->
+  <text x="580" y="44" font-size="11" font-weight="600" fill="#f7fafc" text-anchor="middle" letter-spacing="0.05em">TASK QUEUE</text>
+  <rect x="510" y="52" width="150" height="34" rx="4" fill="#1f2035" stroke="#1d242f" stroke-width="1"/>
+  <text x="585" y="74" font-size="11" fill="#a0aec0" text-anchor="middle">setTimeout(…)</text>
+  <rect x="510" y="87" width="150" height="34" rx="4" fill="#1a1b2e" stroke="#1d242f" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="585" y="109" font-size="11" fill="#4a5568" text-anchor="middle">click, fetch, I/O…</text>
+  <text x="585" y="142" font-size="10" fill="#4a5568" text-anchor="middle">one task at a time</text>
+  <text x="585" y="157" font-size="10" fill="#4a5568" text-anchor="middle">priority: normal</text>
+
+  <!-- Event Loop circle -->
+  <rect x="100" y="185" width="480" height="50" rx="8" fill="#1a1b2e" stroke="#1d242f" stroke-width="1"/>
+  <text x="340" y="206" font-size="12" font-weight="600" fill="#f7fafc" text-anchor="middle">EVENT LOOP</text>
+  <text x="340" y="224" font-size="11" fill="#a0aec0" text-anchor="middle">1. drain call stack  →  2. process microtasks  →  3. render (if 16ms)  →  4. next task</text>
+
+  <!-- Arrows from queues to stack -->
+  <defs>
+    <marker id="ev" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="none" stroke="#4a5568" stroke-width="1.2"/>
+    </marker>
+  </defs>
+  <path d="M240,100 Q165,100 130,130" fill="none" stroke="#4a5568" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#ev)"/>
+  <path d="M510,100 Q470,180 180,180" fill="none" stroke="#4a5568" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#ev)"/>
+</svg>

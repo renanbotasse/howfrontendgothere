@@ -1,0 +1,33 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { seriesArticles } from '../../data/navigation.js';
+---
+
+<Layout title="Series" currentPath="/series">
+
+  <div class="article-header">
+    <span class="article-tag">Series · 9 articles</span>
+    <h1 class="article-title">The Web Stack Beneath Your Framework</h1>
+    <p class="article-meta">Read in order — each article builds on the previous</p>
+  </div>
+
+  <div class="prose" style="margin-bottom: 3rem;">
+    <p>
+      Frameworks abstract the browser, the build, state, and the server. This series dismantles those abstractions
+      and shows what's underneath — not so you stop using frameworks, but so you understand
+      when they help and when they're hiding the real problem.
+    </p>
+  </div>
+
+  <ul class="article-list">
+    {seriesArticles.map(article => (
+      <li>
+        <a href={`/series/${article.slug}`}>
+          <span class="article-list-num">{article.num}</span>
+          {article.title}
+        </a>
+      </li>
+    ))}
+  </ul>
+
+</Layout>

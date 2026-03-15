@@ -1,0 +1,71 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { encyclopediaBlocks } from '../../data/navigation.js';
+
+// Flatten all articles for prev/next nav
+const allArticles = encyclopediaBlocks.flatMap(block =>
+  block.articles.map(a => ({ ...a, block: block.label }))
+);
+
+export async function getStaticPaths() {
+  const allArticles = (await import('../../data/navigation.js')).encyclopediaBlocks
+    .flatMap(block => block.articles.map(a => ({ ...a, block: block.label })));
+
+  return allArticles.map(article => ({
+    params: { slug: article.slug },
+    props: { article, allArticles },
+  }));
+}
+
+const { article, allArticles: articles } = Astro.props;
+
+// Find prev/next
+const currentIndex = articles.findIndex(a => a.slug === article.slug);
+const prev = currentIndex > 0 ? articles[currentIndex - 1] : null;
+const next = currentIndex < articles.length - 1 ? articles[currentIndex + 1] : null;
+
+// Load the markdown content
+let Content;
+try {
+  const mod = await import(`../../content/encyclopedia/${article.slug}.md`);
+  Content = mod.default;
+} catch (e) {
+  Content = null;
+}
+---
+
+<Layout title={article.title} currentPath={`/encyclopedia/${article.slug}`}>
+
+  <div class="article-header">
+    <span class="article-tag">{article.block} · #{article.num}</span>
+    <h1 class="article-title">{article.title}</h1>
+  </div>
+
+  <div class="prose">
+    {Content ? <Content /> : (
+      <p style="color: var(--text-muted); font-style: italic;">
+        Content coming soon — add the file
+        <code>src/content/encyclopedia/{article.slug}.md</code>
+      </p>
+    )}
+  </div>
+
+  <!-- Prev / Next nav -->
+  {(prev || next) && (
+    <nav class="article-nav">
+      {prev ? (
+        <a href={`/encyclopedia/${prev.slug}`} class="article-nav-item prev">
+          <div class="article-nav-dir">← Previous</div>
+          <div class="article-nav-title">{prev.title}</div>
+        </a>
+      ) : <div />}
+      {next ? (
+        <a href={`/encyclopedia/${next.slug}`} class="article-nav-item next">
+          <div class="article-nav-dir">Next →</div>
+          <div class="article-nav-title">{next.title}</div>
+        </a>
+      ) : <div />}
+    </nav>
+  )}
+
+</Layout>

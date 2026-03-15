@@ -1,0 +1,68 @@
+<svg width="680" height="220" viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Instrument Sans', system-ui, sans-serif">
+  <rect width="680" height="220" fill="#131420"/>
+
+  <text x="340" y="20" font-size="11" fill="#4a5568" text-anchor="middle" letter-spacing="0.08em">DESIGN TOKENS — FROM SINGLE SOURCE TO CODE</text>
+
+  <!-- Figma box -->
+  <rect x="14" y="34" width="160" height="140" rx="6" fill="#1f2035" stroke="#ff3c00" stroke-width="1.5"/>
+  <text x="94" y="54" font-size="11" font-weight="600" fill="#ff3c00" text-anchor="middle">Figma</text>
+  <text x="94" y="70" font-size="9" fill="#a0aec0" text-anchor="middle">single source of truth</text>
+
+  <!-- Token chips inside Figma -->
+  <rect x="26" y="82" width="136" height="16" rx="3" fill="#1a1b2e" stroke="#1d242f"/>
+  <rect x="30" y="86" width="8" height="8" rx="2" fill="#ff3c00"/>
+  <text x="44" y="95" font-size="9" fill="#a0aec0">color/brand/primary: #ff3c00</text>
+  <rect x="26" y="102" width="136" height="16" rx="3" fill="#1a1b2e" stroke="#1d242f"/>
+  <text x="34" y="115" font-size="9" fill="#a0aec0">spacing/4: 1rem</text>
+  <rect x="26" y="122" width="136" height="16" rx="3" fill="#1a1b2e" stroke="#1d242f"/>
+  <text x="34" y="135" font-size="9" fill="#a0aec0">font/size/body: 15px</text>
+  <rect x="26" y="142" width="136" height="16" rx="3" fill="#1a1b2e" stroke="#1d242f"/>
+  <text x="34" y="155" font-size="9" fill="#a0aec0">radius/card: 6px</text>
+
+  <!-- Arrows: Figma → Token formats -->
+  <defs>
+    <marker id="dt" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="none" stroke="#4a5568" stroke-width="1.2"/>
+    </marker>
+  </defs>
+  <line x1="174" y1="84" x2="220" y2="70" stroke="#4a5568" stroke-width="1" marker-end="url(#dt)"/>
+  <line x1="174" y1="104" x2="220" y2="104" stroke="#4a5568" stroke-width="1.2" marker-end="url(#dt)"/>
+  <line x1="174" y1="124" x2="220" y2="140" stroke="#4a5568" stroke-width="1" marker-end="url(#dt)"/>
+
+  <!-- CSS Custom Properties -->
+  <rect x="220" y="44" width="170" height="54" rx="5" fill="#1f2035" stroke="#1d242f"/>
+  <text x="305" y="62" font-size="10" font-weight="600" fill="#f7fafc" text-anchor="middle">CSS Variables</text>
+  <text x="233" y="76" font-size="9" fill="#a0aec0">--color-primary: #ff3c00;</text>
+  <text x="233" y="90" font-size="9" fill="#a0aec0">--spacing-4: 1rem;</text>
+
+  <!-- JS/TS tokens -->
+  <rect x="220" y="110" width="170" height="54" rx="5" fill="#1f2035" stroke="#1d242f"/>
+  <text x="305" y="128" font-size="10" font-weight="600" fill="#f7fafc" text-anchor="middle">JS / TypeScript</text>
+  <text x="233" y="142" font-size="9" fill="#a0aec0">tokens.color.primary</text>
+  <text x="233" y="156" font-size="9" fill="#a0aec0">tokens.spacing[4]</text>
+
+  <!-- Android / iOS -->
+  <rect x="220" y="176" width="170" height="32" rx="5" fill="#1f2035" stroke="#1d242f"/>
+  <text x="305" y="196" font-size="10" fill="#a0aec0" text-anchor="middle">Android XML · iOS Swift</text>
+
+  <!-- Arrows → components -->
+  <line x1="390" y1="71" x2="434" y2="100" stroke="#4a5568" stroke-width="1" marker-end="url(#dt)"/>
+  <line x1="390" y1="137" x2="434" y2="104" stroke="#4a5568" stroke-width="1" marker-end="url(#dt)"/>
+
+  <!-- Components box -->
+  <rect x="434" y="54" width="130" height="80" rx="5" fill="#1f2035" stroke="#1d242f"/>
+  <text x="499" y="75" font-size="10" font-weight="600" fill="#f7fafc" text-anchor="middle">Components</text>
+  <rect x="448" y="84" width="102" height="14" rx="3" fill="#ff3c00" fill-opacity="0.2" stroke="#ff3c00" stroke-width="0.5"/>
+  <text x="499" y="95" font-size="9" fill="#ff3c00" text-anchor="middle">&lt;Button variant="primary"&gt;</text>
+  <rect x="448" y="104" width="102" height="14" rx="3" fill="#1a1b2e" stroke="#1d242f"/>
+  <text x="499" y="115" font-size="9" fill="#a0aec0" text-anchor="middle">&lt;Card&gt;&lt;Text size="body"&gt;</text>
+
+  <!-- Arrow → deployed -->
+  <line x1="564" y1="94" x2="608" y2="94" stroke="#ff3c00" stroke-width="1.5" marker-end="url(#dt)"/>
+  <rect x="608" y="64" width="60" height="60" rx="5" fill="#1f2035" stroke="#ff3c00" stroke-width="1.5"/>
+  <text x="638" y="90" font-size="10" fill="#ff3c00" text-anchor="middle">Web</text>
+  <text x="638" y="106" font-size="9" fill="#a0aec0" text-anchor="middle">iOS</text>
+  <text x="638" y="118" font-size="9" fill="#a0aec0" text-anchor="middle">Android</text>
+
+  <text x="340" y="210" font-size="10" fill="#4a5568" text-anchor="middle">changing one token propagates automatically to all platforms</text>
+</svg>

@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { encyclopediaBlocks, seriesArticles } from '../data/navigation.js';
+---
+
+<Layout title="Home">
+
+  <!-- Hero -->
+  <div class="home-hero">
+    <div class="home-hero-ghost">51</div>
+
+    <div class="home-hero-eyebrow-wrap">
+      <div class="home-hero-eyebrow-line"></div>
+      <span class="home-hero-eyebrow">Renan Botasse</span>
+    </div>
+
+    <h1>How Frontend<br /><em>Got Here</em></h1>
+
+    <div class="home-hero-desc">
+      <p>
+        The history and fundamentals of the web — written for devs who already know the tools
+        and want to understand what's underneath them.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- Encyclopedia index -->
+  <div class="home-section-label" style="margin-bottom: 1.25rem;">Encyclopedia — all articles</div>
+
+  {encyclopediaBlocks.map(block => (
+    <div class="block-section">
+      {block.articles.map((article, i) => (
+        <div class="block-row">
+          <div class="block-row-label">
+            {i === 0 ? block.label : ''}
+          </div>
+          <div class="block-row-articles">
+            <a href={`/encyclopedia/${article.slug}`} class="article-list-row">
+              <span class="article-list-num">{article.num}</span>
+              <span class="article-list-title">{article.title}</span>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  ))}
+
+</Layout>
+
+<style>
+  .article-list-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.45rem 0;
+    text-decoration: none;
+    transition: color 0.12s;
+  }
+
+  .article-list-row:hover .article-list-title {
+    color: var(--text-primary);
+  }
+
+  .article-list-row:hover .article-list-num {
+    color: var(--teal);
+  }
+
+  .article-list-num {
+    font-family: var(--font-mono);
+    font-size: 10.8px;
+    color: var(--text-ghost);
+    min-width: 1.75rem;
+    transition: color 0.12s;
+    letter-spacing: 0.03em;
+    flex-shrink: 0;
+  }
+
+  .article-list-title {
+    font-size: 15.6px;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.5;
+    transition: color 0.12s;
+  }
+</style>

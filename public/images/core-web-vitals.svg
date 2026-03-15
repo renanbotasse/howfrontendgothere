@@ -1,0 +1,79 @@
+<svg width="680" height="220" viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Instrument Sans', system-ui, sans-serif">
+  <rect width="680" height="220" fill="#131420"/>
+
+  <text x="340" y="20" font-size="11" fill="#4a5568" text-anchor="middle" letter-spacing="0.08em">CORE WEB VITALS — GOOGLE'S PERFORMANCE METRICS</text>
+
+  <!-- LCP panel -->
+  <rect x="14" y="30" width="204" height="170" rx="6" fill="#1a1b2e" stroke="#1d242f"/>
+  <text x="116" y="52" font-size="11" font-weight="600" fill="#f7fafc" text-anchor="middle" letter-spacing="0.04em">LCP</text>
+  <text x="116" y="68" font-size="9" fill="#a0aec0" text-anchor="middle">Largest Contentful Paint</text>
+  <text x="116" y="84" font-size="9" fill="#4a5568" text-anchor="middle">time to largest visible element</text>
+
+  <!-- LCP thresholds bar -->
+  <rect x="30" y="96" width="60" height="18" rx="3" fill="#2d5a27"/>
+  <text x="60" y="109" font-size="10" fill="#6fcf3d" text-anchor="middle">≤ 2.5s</text>
+  <rect x="92" y="96" width="60" height="18" rx="3" fill="#5a4a14"/>
+  <text x="122" y="109" font-size="10" fill="#ff3c00" text-anchor="middle">≤ 4s</text>
+  <rect x="154" y="96" width="50" height="18" rx="3" fill="#5a1a1a"/>
+  <text x="179" y="109" font-size="10" fill="#cf6060" text-anchor="middle">&gt; 4s</text>
+
+  <text x="60" y="128" font-size="9" fill="#6fcf3d" text-anchor="middle">Good</text>
+  <text x="122" y="128" font-size="9" fill="#ff3c00" text-anchor="middle">Needs</text>
+  <text x="179" y="128" font-size="9" fill="#cf6060" text-anchor="middle">Poor</text>
+
+  <!-- LCP icon: rectangle representing large image -->
+  <rect x="40" y="142" width="152" height="44" rx="4" fill="#1f2035" stroke="#1d242f"/>
+  <rect x="50" y="150" width="80" height="30" rx="2" fill="#1d242f"/>
+  <text x="90" y="168" font-size="9" fill="#4a5568" text-anchor="middle">hero image</text>
+  <text x="148" y="158" font-size="8" fill="#4a5568" text-anchor="middle">ou h1</text>
+
+  <!-- INP panel -->
+  <rect x="238" y="30" width="204" height="170" rx="6" fill="#1a1b2e" stroke="#1d242f"/>
+  <text x="340" y="52" font-size="11" font-weight="600" fill="#f7fafc" text-anchor="middle" letter-spacing="0.04em">INP</text>
+  <text x="340" y="68" font-size="9" fill="#a0aec0" text-anchor="middle">Interaction to Next Paint</text>
+  <text x="340" y="84" font-size="9" fill="#4a5568" text-anchor="middle">time to respond to interactions</text>
+
+  <!-- INP thresholds -->
+  <rect x="254" y="96" width="60" height="18" rx="3" fill="#2d5a27"/>
+  <text x="284" y="109" font-size="10" fill="#6fcf3d" text-anchor="middle">≤ 200ms</text>
+  <rect x="316" y="96" width="60" height="18" rx="3" fill="#5a4a14"/>
+  <text x="346" y="109" font-size="10" fill="#ff3c00" text-anchor="middle">≤ 500ms</text>
+  <rect x="378" y="96" width="50" height="18" rx="3" fill="#5a1a1a"/>
+  <text x="403" y="109" font-size="10" fill="#cf6060" text-anchor="middle">&gt; 500ms</text>
+
+  <text x="284" y="128" font-size="9" fill="#6fcf3d" text-anchor="middle">Good</text>
+  <text x="346" y="128" font-size="9" fill="#ff3c00" text-anchor="middle">Needs</text>
+  <text x="403" y="128" font-size="9" fill="#cf6060" text-anchor="middle">Poor</text>
+
+  <!-- INP click → paint -->
+  <circle cx="275" cy="162" r="8" fill="#1d242f" stroke="#4a5568"/>
+  <text x="275" y="166" font-size="9" fill="#4a5568" text-anchor="middle">click</text>
+  <line x1="283" y1="162" x2="320" y2="162" stroke="#4a5568" stroke-width="1.5"/>
+  <rect x="320" y="152" width="50" height="20" rx="3" fill="#1f2035" stroke="#1d242f"/>
+  <text x="345" y="166" font-size="9" fill="#a0aec0" text-anchor="middle">render</text>
+  <text x="370" y="166" font-size="9" fill="#4a5568">→ pixel</text>
+
+  <!-- CLS panel -->
+  <rect x="462" y="30" width="204" height="170" rx="6" fill="#1a1b2e" stroke="#1d242f"/>
+  <text x="564" y="52" font-size="11" font-weight="600" fill="#f7fafc" text-anchor="middle" letter-spacing="0.04em">CLS</text>
+  <text x="564" y="68" font-size="9" fill="#a0aec0" text-anchor="middle">Cumulative Layout Shift</text>
+  <text x="564" y="84" font-size="9" fill="#4a5568" text-anchor="middle">visual stability of the page</text>
+
+  <!-- CLS thresholds -->
+  <rect x="478" y="96" width="56" height="18" rx="3" fill="#2d5a27"/>
+  <text x="506" y="109" font-size="10" fill="#6fcf3d" text-anchor="middle">≤ 0.1</text>
+  <rect x="536" y="96" width="56" height="18" rx="3" fill="#5a4a14"/>
+  <text x="564" y="109" font-size="10" fill="#ff3c00" text-anchor="middle">≤ 0.25</text>
+  <rect x="594" y="96" width="58" height="18" rx="3" fill="#5a1a1a"/>
+  <text x="623" y="109" font-size="10" fill="#cf6060" text-anchor="middle">&gt; 0.25</text>
+
+  <text x="506" y="128" font-size="9" fill="#6fcf3d" text-anchor="middle">Good</text>
+  <text x="564" y="128" font-size="9" fill="#ff3c00" text-anchor="middle">Needs</text>
+  <text x="623" y="128" font-size="9" fill="#cf6060" text-anchor="middle">Poor</text>
+
+  <!-- CLS visual: element jumping -->
+  <rect x="480" y="142" width="100" height="18" rx="3" fill="#1d242f"/>
+  <text x="530" y="155" font-size="9" fill="#4a5568" text-anchor="middle">text (before)</text>
+  <rect x="490" y="162" width="100" height="18" rx="3" fill="#1f2035" stroke="#cf6060" stroke-width="0.5" stroke-dasharray="3,2"/>
+  <text x="540" y="175" font-size="9" fill="#cf6060" text-anchor="middle">text jumped ↓</text>
+</svg>

@@ -1,0 +1,55 @@
+<svg width="680" height="200" viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Instrument Sans', system-ui, sans-serif">
+  <rect width="680" height="200" fill="#131420"/>
+
+  <text x="340" y="20" font-size="11" fill="#4a5568" text-anchor="middle" letter-spacing="0.08em">WEBPACK — MODULES AS A GRAPH</text>
+
+  <!-- Input files -->
+  <rect x="14" y="34" width="120" height="26" rx="4" fill="#1f2035" stroke="#1d242f"/>
+  <text x="74" y="51" font-size="11" fill="#a0aec0" text-anchor="middle">📄 index.js</text>
+
+  <rect x="14" y="70" width="120" height="26" rx="4" fill="#1f2035" stroke="#1d242f"/>
+  <text x="74" y="87" font-size="11" fill="#a0aec0" text-anchor="middle">📄 utils.js</text>
+
+  <rect x="14" y="106" width="120" height="26" rx="4" fill="#1f2035" stroke="#1d242f"/>
+  <text x="74" y="123" font-size="11" fill="#a0aec0" text-anchor="middle">🎨 styles.css</text>
+
+  <rect x="14" y="142" width="120" height="26" rx="4" fill="#1f2035" stroke="#1d242f"/>
+  <text x="74" y="159" font-size="11" fill="#a0aec0" text-anchor="middle">🖼 logo.png</text>
+
+  <!-- Arrow lines to webpack -->
+  <defs>
+    <marker id="wb" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="none" stroke="#4a5568" stroke-width="1.2"/>
+    </marker>
+  </defs>
+  <line x1="134" y1="47" x2="240" y2="95" stroke="#4a5568" stroke-width="1" marker-end="url(#wb)"/>
+  <line x1="134" y1="83" x2="240" y2="97" stroke="#4a5568" stroke-width="1" marker-end="url(#wb)"/>
+  <line x1="134" y1="119" x2="240" y2="101" stroke="#4a5568" stroke-width="1" marker-end="url(#wb)"/>
+  <line x1="134" y1="155" x2="240" y2="105" stroke="#4a5568" stroke-width="1" marker-end="url(#wb)"/>
+
+  <!-- Webpack box -->
+  <rect x="240" y="60" width="160" height="80" rx="8" fill="#1f2035" stroke="#ff3c00" stroke-width="1.5"/>
+  <text x="320" y="88" font-size="13" font-weight="600" fill="#ff3c00" text-anchor="middle">Webpack</text>
+  <text x="320" y="106" font-size="10" fill="#a0aec0" text-anchor="middle">resolves modules</text>
+  <text x="320" y="120" font-size="10" fill="#4a5568" text-anchor="middle">loaders · plugins · tree-shaking</text>
+
+  <!-- Arrow to outputs -->
+  <defs>
+    <marker id="wb2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="none" stroke="#ff3c00" stroke-width="1.2"/>
+    </marker>
+  </defs>
+  <line x1="400" y1="100" x2="430" y2="100" stroke="#ff3c00" stroke-width="1.5" marker-end="url(#wb2)"/>
+
+  <!-- Output files -->
+  <rect x="430" y="50" width="240" height="26" rx="4" fill="#1f2035" stroke="#ff3c00" stroke-width="1"/>
+  <text x="550" y="67" font-size="11" fill="#ff3c00" text-anchor="middle">bundle.js  (código + dependências)</text>
+
+  <rect x="430" y="86" width="240" height="26" rx="4" fill="#1f2035" stroke="#1d242f"/>
+  <text x="550" y="103" font-size="11" fill="#a0aec0" text-anchor="middle">styles.css  (extraído)</text>
+
+  <rect x="430" y="122" width="240" height="26" rx="4" fill="#1f2035" stroke="#1d242f"/>
+  <text x="550" y="139" font-size="11" fill="#a0aec0" text-anchor="middle">logo.[hash].png  (assets)</text>
+
+  <text x="340" y="185" font-size="10" fill="#4a5568" text-anchor="middle">entry point → dependency graph → production-optimized bundles</text>
+</svg>

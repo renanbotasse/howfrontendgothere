@@ -1,0 +1,37 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { encyclopediaBlocks } from '../../data/navigation.js';
+---
+
+<Layout title="Encyclopedia">
+
+  <div class="article-header">
+    <span class="article-tag">Reference</span>
+    <h1 class="article-title">How Frontend Got Here</h1>
+    <p class="article-meta">51 articles · 9 thematic blocks · independent of each other</p>
+  </div>
+
+  <div class="prose" style="margin-bottom: 3rem;">
+    <p>
+      Each article covers a problem, a technology, or a decision that shaped frontend as it exists today.
+      No need to read in order — each piece works on its own.
+    </p>
+  </div>
+
+  {encyclopediaBlocks.map(block => (
+    <div class="block-section">
+      <div class="block-title">{block.label}</div>
+      <ul class="article-list">
+        {block.articles.map(article => (
+          <li>
+            <a href={`/encyclopedia/${article.slug}`}>
+              <span class="article-list-num">{article.num}</span>
+              {article.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+
+</Layout>

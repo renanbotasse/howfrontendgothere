@@ -1,0 +1,71 @@
+<svg width="680" height="240" viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Instrument Sans', system-ui, sans-serif">
+  <rect width="680" height="240" fill="#131420"/>
+
+  <line x1="340" y1="0" x2="340" y2="240" stroke="#1d242f" stroke-width="1"/>
+
+  <!-- HTTP/2 (TCP) -->
+  <text x="170" y="22" font-size="12" font-weight="600" fill="#a0aec0" text-anchor="middle">HTTP/2 over TCP</text>
+  <text x="170" y="38" font-size="10" fill="#4a5568" text-anchor="middle">TCP-level head-of-line blocking</text>
+
+  <!-- Streams OK then blocked -->
+  <text x="40" y="58" font-size="9" fill="#4a5568">Stream A</text>
+  <rect x="20" y="64" width="220" height="18" rx="3" fill="#1f2035" stroke="#1d242f"/>
+  <rect x="20" y="64" width="80" height="18" rx="3" fill="#a0aec0" fill-opacity="0.3"/>
+  <text x="60" y="77" font-size="9" fill="#a0aec0" text-anchor="middle">data A</text>
+
+  <text x="40" y="96" font-size="9" fill="#4a5568">Stream B</text>
+  <rect x="20" y="102" width="220" height="18" rx="3" fill="#1f2035" stroke="#1d242f"/>
+  <rect x="20" y="102" width="60" height="18" rx="3" fill="#a0aec0" fill-opacity="0.3"/>
+  <text x="50" y="115" font-size="9" fill="#a0aec0" text-anchor="middle">data B</text>
+
+  <text x="40" y="134" font-size="9" fill="#4a5568">Stream C</text>
+  <rect x="20" y="140" width="220" height="18" rx="3" fill="#1f2035" stroke="#1d242f"/>
+  <rect x="20" y="140" width="40" height="18" rx="3" fill="#a0aec0" fill-opacity="0.3"/>
+  <text x="40" y="153" font-size="9" fill="#a0aec0" text-anchor="middle">C</text>
+
+  <!-- Packet loss indicator at position 100 -->
+  <line x1="110" y1="56" x2="110" y2="175" stroke="#ff3c00" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="112" y="54" font-size="9" fill="#ff3c00">✕ packet lost</text>
+
+  <!-- Blocked zone -->
+  <rect x="110" y="64" width="130" height="18" rx="0" fill="#ff3c00" fill-opacity="0.08"/>
+  <text x="175" y="77" font-size="9" fill="#ff3c00" text-anchor="middle">waiting for retransmission</text>
+  <rect x="110" y="102" width="130" height="18" rx="0" fill="#ff3c00" fill-opacity="0.08"/>
+  <text x="175" y="115" font-size="9" fill="#ff3c00" text-anchor="middle">also blocked</text>
+  <rect x="110" y="140" width="130" height="18" rx="0" fill="#ff3c00" fill-opacity="0.08"/>
+  <text x="175" y="153" font-size="9" fill="#ff3c00" text-anchor="middle">also blocked</text>
+
+  <text x="130" y="195" font-size="10" fill="#ff3c00" text-anchor="middle">1 lost packet blocks all streams</text>
+
+  <!-- HTTP/3 (QUIC) -->
+  <text x="510" y="22" font-size="12" font-weight="600" fill="#ff3c00" text-anchor="middle">HTTP/3 over QUIC</text>
+  <text x="510" y="38" font-size="10" fill="#4a5568" text-anchor="middle">independent streams at the transport layer</text>
+
+  <text x="378" y="58" font-size="9" fill="#4a5568">Stream A</text>
+  <rect x="360" y="64" width="300" height="18" rx="3" fill="#1f2035" stroke="#1d242f"/>
+  <rect x="360" y="64" width="80" height="18" rx="3" fill="#a0aec0" fill-opacity="0.3"/>
+  <text x="400" y="77" font-size="9" fill="#a0aec0" text-anchor="middle">data A</text>
+
+  <text x="378" y="96" font-size="9" fill="#4a5568">Stream B — packet lost</text>
+  <rect x="360" y="102" width="300" height="18" rx="3" fill="#1f2035" stroke="#1d242f"/>
+  <rect x="360" y="102" width="60" height="18" rx="3" fill="#a0aec0" fill-opacity="0.3"/>
+  <text x="390" y="115" font-size="9" fill="#a0aec0" text-anchor="middle">B…</text>
+  <!-- Only B blocked -->
+  <line x1="430" y1="98" x2="430" y2="124" stroke="#ff3c00" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="432" y="96" font-size="9" fill="#ff3c00">✕</text>
+  <rect x="430" y="102" width="80" height="18" fill="#ff3c00" fill-opacity="0.08"/>
+  <text x="470" y="115" font-size="9" fill="#ff3c00" text-anchor="middle">only B waits</text>
+  <rect x="510" y="102" width="150" height="18" rx="3" fill="#a0aec0" fill-opacity="0.2"/>
+  <text x="585" y="115" font-size="9" fill="#a0aec0" text-anchor="middle">B retransmitted</text>
+
+  <text x="378" y="134" font-size="9" fill="#4a5568">Stream C</text>
+  <rect x="360" y="140" width="300" height="18" rx="3" fill="#1f2035" stroke="#1d242f"/>
+  <rect x="360" y="140" width="300" height="18" rx="3" fill="#a0aec0" fill-opacity="0.25"/>
+  <text x="510" y="153" font-size="9" fill="#a0aec0" text-anchor="middle">C continues normally — unaffected</text>
+
+  <text x="510" y="195" font-size="10" fill="#a0aec0" text-anchor="middle">1 lost packet blocks only the affected stream</text>
+
+  <!-- Bottom labels -->
+  <text x="170" y="220" font-size="9" fill="#4a5568" text-anchor="middle">TCP: reliability per entire connection</text>
+  <text x="510" y="220" font-size="9" fill="#4a5568" text-anchor="middle">QUIC: per-stream reliability (UDP + own logic)</text>
+</svg>

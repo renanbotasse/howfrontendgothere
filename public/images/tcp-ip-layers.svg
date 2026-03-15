@@ -1,0 +1,39 @@
+<svg width="680" height="260" viewBox="0 0 680 260" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, 'Instrument Sans', system-ui, sans-serif">
+  <rect width="680" height="260" fill="#131420"/>
+
+  <!-- Layer 4: Application -->
+  <rect x="20" y="16" width="640" height="52" rx="6" fill="#1f2035" stroke="#ff3c00" stroke-width="1.5"/>
+  <text x="44" y="39" font-size="11" font-weight="600" fill="#ff3c00" letter-spacing="0.08em" text-transform="uppercase">APPLICATION</text>
+  <text x="44" y="57" font-size="12" fill="#a0aec0">HTTP · HTTPS · DNS · WebSockets · FTP</text>
+  <text x="630" y="46" font-size="11" fill="#4a5568" text-anchor="end">Layer 4</text>
+
+  <!-- Arrows between layers -->
+  <line x1="340" y1="68" x2="340" y2="80" stroke="#1d242f" stroke-width="2"/>
+  <polygon points="340,82 336,76 344,76" fill="#1d242f"/>
+
+  <!-- Layer 3: Transport -->
+  <rect x="20" y="82" width="640" height="52" rx="6" fill="#1f2035" stroke="#1d242f" stroke-width="1"/>
+  <text x="44" y="105" font-size="11" font-weight="600" fill="#f7fafc" letter-spacing="0.08em">TRANSPORT</text>
+  <text x="44" y="123" font-size="12" fill="#a0aec0">TCP (reliable, ordered) · UDP (fast, no guarantee)</text>
+  <text x="630" y="111" font-size="11" fill="#4a5568" text-anchor="end">Layer 3</text>
+
+  <!-- Arrows -->
+  <line x1="340" y1="134" x2="340" y2="146" stroke="#1d242f" stroke-width="2"/>
+  <polygon points="340,148 336,142 344,142" fill="#1d242f"/>
+
+  <!-- Layer 2: Internet -->
+  <rect x="20" y="148" width="640" height="52" rx="6" fill="#1f2035" stroke="#1d242f" stroke-width="1"/>
+  <text x="44" y="171" font-size="11" font-weight="600" fill="#f7fafc" letter-spacing="0.08em">INTERNET (IP)</text>
+  <text x="44" y="189" font-size="12" fill="#a0aec0">IPv4 · IPv6 — addressing and packet routing</text>
+  <text x="630" y="177" font-size="11" fill="#4a5568" text-anchor="end">Layer 2</text>
+
+  <!-- Arrows -->
+  <line x1="340" y1="200" x2="340" y2="212" stroke="#1d242f" stroke-width="2"/>
+  <polygon points="340,214 336,208 344,208" fill="#1d242f"/>
+
+  <!-- Layer 1: Network Access -->
+  <rect x="20" y="214" width="640" height="30" rx="6" fill="#1a1b2e" stroke="#1d242f" stroke-width="1"/>
+  <text x="44" y="233" font-size="11" font-weight="600" fill="#f7fafc" letter-spacing="0.08em">NETWORK ACCESS</text>
+  <text x="340" y="233" font-size="12" fill="#a0aec0" text-anchor="middle">Ethernet · WiFi · Fiber — physical bits</text>
+  <text x="630" y="233" font-size="11" fill="#4a5568" text-anchor="end">Layer 1</text>
+</svg>
