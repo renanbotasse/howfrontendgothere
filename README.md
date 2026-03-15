@@ -8,10 +8,7 @@ A comprehensive editorial website documenting the history and fundamentals of fr
 
 ## What It Is
 
-Two content collections:
-
-- **Encyclopedia** — 51 independent articles organized into 10 thematic blocks. No reading order required. Each piece covers a problem, a technology, or a decision that shaped frontend as it exists today.
-- **Series** — 9 ordered articles titled *The Web Stack Beneath Your Framework*. Designed to be read sequentially; each article builds on the previous.
+An encyclopedia of 51 independent articles organized into 10 thematic blocks. No reading order required. Each piece covers a problem, a technology, or a decision that shaped frontend as it exists today.
 
 ---
 
@@ -76,8 +73,7 @@ howfrontendgothere/
     │   │   ├── index.astro              # Encyclopedia index
     │   │   └── [slug].astro            # Dynamic article pages
     │   └── series/
-    │       ├── index.astro              # Series index
-    │       └── [slug].astro            # Dynamic article pages
+    │       └── [slug].astro            # Dynamic series pages
     │
     └── styles/
         └── global.css        # Full design system (~1000 lines)
@@ -104,33 +100,16 @@ howfrontendgothere/
 | 9 | The AI Era | 45 – 47 |
 | 10 | Industry & Cost | 48 – 51 |
 
-### Series — *The Web Stack Beneath Your Framework*
-
-9 articles meant to be read in order. Covers what frameworks abstract — the browser, the build pipeline, state, the server — and shows what's underneath.
-
-| # | Title |
-|---|---|
-| 01 | Your Framework Can't Fix Your Architecture |
-| 02 | The Browser Is a Machine, Not an Environment |
-| 03 | Your Framework Is Only as Smart as Its Build Pipeline |
-| 04 | The Complexity You Bought Without Reading the Receipt |
-| 05 | React Wasn't the Inevitable Future of Frontend |
-| 06 | React Is a Scheduling Runtime, Not a Diff Algorithm |
-| 07 | Next.js Is an Operational Architecture Proposal |
-| 08 | When State Changes, Who Knows, How Fast, and at What Cost? |
-| 09 | The Web Before JavaScript Owned the UI |
-
 ---
 
 ## Adding New Articles
 
 ### 1. Create the markdown file
 
-Drop the file into the correct content folder:
+Drop the file into the content folder:
 
 ```
 src/content/encyclopedia/{slug}.md
-src/content/series/{slug}.md
 ```
 
 The article body starts directly with prose — no YAML frontmatter, no H1. The layout renders the title automatically from `navigation.js`. Use standard Markdown headings, blockquotes, code blocks, and image references.
@@ -181,7 +160,7 @@ If you have articles in an `outputs/` directory adjacent to the project root, th
 node scripts/import-articles.js
 ```
 
-The script reads `.md` files from `../outputs/{type}/`, strips the H1 heading (since the layout renders it), and saves the result to `src/content/{type}/{slug}.md`.
+The script reads `.md` files from `../outputs/encyclopedia/`, strips the H1 heading (since the layout renders it), and saves the result to `src/content/encyclopedia/{slug}.md`.
 
 ---
 
@@ -278,7 +257,7 @@ Sticky, 64px tall, full width. Contains:
 
 - Logo link → home
 - Search button (⌘K shortcut placeholder)
-- Navigation links: Encyclopedia · Series
+- Navigation links: Encyclopedia
 - Social icon links: HackerNoon · GitHub · LinkedIn · Portfolio
 - Hamburger button (mobile only, visible at ≤900px)
 
@@ -287,7 +266,6 @@ Sticky, 64px tall, full width. Contains:
 Sticky on desktop, scrollable independently. Content is conditional on the current path:
 
 - On `/` and `/encyclopedia/*`: shows all 51 articles grouped by thematic block
-- On `/series/*`: shows all 9 series articles in order
 
 The active article is highlighted with a teal left border and tinted background. On mobile the sidebar becomes a slide-in drawer.
 
@@ -349,7 +327,7 @@ export default defineConfig({
 });
 ```
 
-Total build output: **63 pre-rendered HTML pages** (home + encyclopedia index + series index + 51 encyclopedia articles + 9 series articles).
+Total build output: **53 pre-rendered HTML pages** (home + encyclopedia index + 51 encyclopedia articles).
 
 ---
 
